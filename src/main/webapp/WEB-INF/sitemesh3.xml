@@ -1,0 +1,8 @@
+<sitemesh>
+	<mapping decorator="/resources/decorators/default-decorator.jsp" />
+	<mapping path="/login" exclue="true" />
+	
+	<content-processor>
+		<tag-rule-bundle class="org.sitemesh.content.tagrules.html.DivExtractingTagRuleBundle" />
+	</content-processor>
+</sitemesh>

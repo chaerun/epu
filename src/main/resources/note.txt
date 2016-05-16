@@ -1,0 +1,3 @@
+add varchar 255 buat nama kegiatan
+tambah kolom buat flag di participantJourney default false
+tambah kolom "informant_transport_account" varchar(36)

@@ -1,0 +1,57 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security.xsd">
+	<http>
+
+
+		<intercept-url pattern="/activity/**" access="ROLE_SA" />
+
+		<intercept-url pattern="/config/**" access="ROLE_SA" />
+
+		<intercept-url pattern="/balance/**" access="ROLE_SA" />
+		<intercept-url pattern="/account/**" access="ROLE_SA" />
+		
+		<intercept-url pattern="/accountdetail/**" access="ROLE_SA" />
+
+
+		<intercept-url pattern="/meeting/**/view/**" access="ROLE_SA,ROLE_ADMIN,ROLE_USER" />
+		<intercept-url pattern="/meeting/sa/**" access="ROLE_SA" />
+
+		<intercept-url pattern="/journey/**" access="ROLE_USER,ROLE_ADMIN" />
+		<intercept-url pattern="/participantjourney/**" access="ROLE_USER,ROLE_ADMIN" />
+		<intercept-url pattern="/moderator/**" access="ROLE_USER,ROLE_ADMIN" />
+		<intercept-url pattern="/informant/**" access="ROLE_USER,ROLE_ADMIN" />
+		
+
+		<intercept-url pattern="/receipt/**" access="ROLE_SA" />
+		<intercept-url pattern="/stock/**" access="ROLE_SA" />
+
+
+		<intercept-url pattern="/participant/**" access="ROLE_SA" />
+		<intercept-url pattern="/report/**" access="ROLE_SA,ROLE_USER,ROLE_ADMIN" />
+		<intercept-url pattern="/sa/**" access="ROLE_SA" />
+		<intercept-url pattern="/position/**" access="ROLE_SA" />
+		<intercept-url pattern="/grade/**" access="ROLE_SA" />
+		<intercept-url pattern="/official/**" access="ROLE_SA" />
+		<intercept-url pattern="/subdivision/**" access="ROLE_SA" />
+
+		<intercept-url pattern="/user/password**" access="ROLE_USER,ROLE_SA,ROLE_ADMIN" />
+		<intercept-url pattern="/user/**" access="ROLE_SA,ROLE_ADMIN" />
+
+		<intercept-url pattern="/home/**" access="ROLE_USER,ROLE_SA,ROLE_ADMIN" />
+
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<form-login login-page="/login" authentication-failure-handler-ref="authenticationFailureHandler" authentication-success-handler-ref="authenticationSuccessHandler" />
+		<logout logout-success-url="/" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="md5" />
+			<!-- <user-service> <user name="donypramujo" password="5f4dcc3b5aa765d61d8327deb882cf99" authorities="ROLE_SA,ROLE_USER,ROLE_ADMIN" /> <user name="agungsedayu" password="5f4dcc3b5aa765d61d8327deb882cf99" authorities="ROLE_SA,ROLE_USER,ROLE_ADMIN" /> </user-service> -->
+			<jdbc-user-service data-source-ref="dataSource" users-by-username-query="select username,password,enabled from user where username = ?" authorities-by-username-query="select username,role as authorities from user where username = ?" />
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

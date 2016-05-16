@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="shortNormatifView" class="com.kemenkes.epu.ui.web.view.ShortNormatifView">
+		<property name="url" value="/WEB-INF/template/xls/short-normatif" />
+	</bean>
+
+	<bean id="longNormatifView" class="com.kemenkes.epu.ui.web.view.LongNormatifView">
+		<property name="url" value="/WEB-INF/template/xls/long-normatif" />
+	</bean>
+
+	<bean id="shortHonorModeratorView" class="com.kemenkes.epu.ui.web.view.ShortHonorModeratorView">
+		<property name="url" value="/WEB-INF/template/xls/short-honor-moderator" />
+	</bean>
+
+	<bean id="shortHonorNarasumberView" class="com.kemenkes.epu.ui.web.view.ShortHonorNarasumberView">
+		<property name="url" value="/WEB-INF/template/xls/short-honor-narasumber" />
+	</bean>
+
+	<bean id="shortListActivityView" class="com.kemenkes.epu.ui.web.view.ShortListActivityView">
+		<property name="url" value="/WEB-INF/template/xls/short-list-activity" />
+	</bean>
+
+	<bean id="attendanceView" class="com.kemenkes.epu.ui.web.view.AttendanceView">
+		<property name="url" value="/WEB-INF/template/xls/attendance" />
+	</bean>
+
+	<bean id="participantDetailJourney" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+		<property name="url" value="/WEB-INF/template/jasper/participant-detail-journey.jasper" />
+	</bean>
+
+	<bean id="riil" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+		<property name="url" value="/WEB-INF/template/jasper/riil.jasper" />
+	</bean>
+
+	<bean id="receipt-up" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+		<property name="url" value="/WEB-INF/template/jasper/receipt-up.jasper" />
+	</bean>
+
+
+	<bean id="return-amount" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+		<property name="url" value="/WEB-INF/template/jasper/return-amount.jasper" />
+	</bean>
+
+
+
+
+	<!-- <bean id="perincianBiaya" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> <property name="url" value="/WEB-INF/template/jasper/rincianPerjalananDinas.jasper" /> </bean> <bean id="inHonorModerator" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> <property name="url" value="/WEB-INF/template/jasper/inHonorModerator.jasper" /> </bean> 
+		<bean id="inHonorNarasumber" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> <property name="url" value="/WEB-INF/template/jasper/inHonorNarasumber.jasper" /> </bean> <bean id="riil" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> <property name="url" value="/WEB-INF/template/jasper/riil.jasper" /> </bean> <bean id="kuitansiUp" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> 
+		<property name="url" value="/WEB-INF/template/jasper/kuitansiUp.jasper" /> </bean> <bean id="kembali" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"> <property name="url" value="/WEB-INF/template/jasper/Pengembalian.jasper" /> </bean> -->
+</beans>
